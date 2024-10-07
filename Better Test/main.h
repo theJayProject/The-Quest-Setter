@@ -11,7 +11,14 @@ std::string taskName_ph;
 auto taskList(std::map<std::string, bool>::iterator it = tasks.begin()) {
     std::cout << "\n";
     while (it != tasks.end()) {
-        std::cout << "Task: " << it->first << ", Status: " << it->second << std::endl;
+        std::string status;
+        if (it->second == true) {
+            status = "Complete";
+        }
+        else if (it->second == false) {
+            status = "Incomplete";
+        }
+        std::cout << "Task: " << it->first << ", Status: " << status << std::endl;
         ++it;
         std::cout << std::endl;
     }
