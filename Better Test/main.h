@@ -2,14 +2,15 @@
 #include <map>
 #include <iostream>
 
-#define Tasks
+#define TASKS
 std::map<std::string, bool> tasks;
 std::string taskName_ph;
 
 //Listing Tasks
-#define TaskList    
+#define TASK_LIST
 auto taskList(std::map<std::string, bool>::iterator it = tasks.begin()) {
     std::cout << "\n";
+//Complete or Incomplete Status
     while (it != tasks.end()) {
         std::string status;
         if (it->second == true) {
@@ -24,7 +25,7 @@ auto taskList(std::map<std::string, bool>::iterator it = tasks.begin()) {
     }
 }
 //Adding Tasks
-#define ADDTASK
+#define ADD_TASK
 auto addTask() {
 
     std::cout << "What is the task name?\n";
@@ -33,7 +34,7 @@ auto addTask() {
     std::cout << "Added " << taskName_ph << " as incomplete.\n";
 }
 //Deleting Tasks
-#define DELETETASK
+#define DELETE_TASK
 auto deleteTask() {
     std::cout << "Which task would you like to delete?\n";
     std::cin >> taskName_ph;
@@ -47,7 +48,7 @@ auto deleteTask() {
     }
 }
 //Completing Tasks
-#define COMPLETETASK
+#define COMPLETE_TASK
 auto completeTask() {
     bool complete = true;
     std::cout << "Which task would you like to complete?\n";
