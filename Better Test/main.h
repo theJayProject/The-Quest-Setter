@@ -19,9 +19,9 @@ auto taskList(std::map<std::string, bool>::iterator it = tasks.begin()) {
         else{
             status = "Incomplete";
         }
-        std::cout << "Task: " << it->first << ", Status: " << status << std::endl;
+        std::cout << "Task: " << it->first << ", Status: " << status << "\n";
         ++it;
-        std::cout << std::endl;
+        std::cout << "\n";
     }
 }
 //Adding Tasks
