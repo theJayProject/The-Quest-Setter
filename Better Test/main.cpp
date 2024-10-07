@@ -1,38 +1,40 @@
-#include<iostream>
-#include <map>
-
+#include "main.h"
 
 int main() {
-    //Creating a map database for all given tasks, going by task number, task name, and status.
-    std::map<std::string, bool> tasks;
-    int taskNumber_ph = 0;
-    tasks.insert(std::make_pair("zero", false));
-//Adding, reading, editing tasks introduced     
-    
+    //Adding, reading, editing tasks introduced     
     for (std::string Answer_ph; Answer_ph != "end";) {
-        std::cout << "Would you like to add, read, complete or edit a task?\n";
+        std::cout << "Would you like to add, read, complete or delete a task?\n";
         std::cin >> Answer_ph;
+        std::string taskName_ph;
         if (Answer_ph == "add") {
-            taskNumber_ph++;
             std::cout << "What is the task name?\n";
-            std::string taskName;
-            std::cin >> taskName;
-            tasks.insert(std::make_pair(taskName, taskNumber_ph));
-            std::cout << "Added " << taskName << " as incomplete.\n";
-
+            std::cin >> taskName_ph;
+            tasks.insert(std::make_pair(taskName_ph, false));
+            std::cout << "Added " << taskName_ph << " as incomplete.\n";
+            taskList();
         }
         else if (Answer_ph == "read") {
-
+            taskList();
         }
-
         else if (Answer_ph == "complete") {
-
+            bool complete = true;
+            std::cout << "Which task would you like to complete?\n";
+            std::cin >> taskName_ph;
+            tasks.erase(tasks.find(taskName_ph));
+            tasks.insert(std::make_pair(taskName_ph, true));
+            std::cout << taskName_ph << " is now complete.\n";
+            taskList();
         }
-        else if (Answer_ph == "edit") {
-
+        else if (Answer_ph == "delete") {
+            std::string taskDelete_ph;
+            std::cout << "Which task would you like to delete?\n";
+            std::cin >> taskDelete_ph;
+            tasks.erase(tasks.find(taskDelete_ph));
+            std::cout << taskDelete_ph << " has been deleted successfully\n";
+            taskList();
         }
         else {
-            std::cout << "Error: command misunderstood.";
+            std::cout << "Error: command misunderstood.\n";
             return 0;
         }
     }
