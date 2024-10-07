@@ -16,7 +16,7 @@ auto taskList(std::map<std::string, bool>::iterator it = tasks.begin()) {
         if (it->second == true) {
             status = "Complete";
         }
-        else if (it->second == false) {
+        else{
             status = "Incomplete";
         }
         std::cout << "Task: " << it->first << ", Status: " << status << std::endl;
