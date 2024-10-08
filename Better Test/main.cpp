@@ -4,28 +4,28 @@
 
 
 int main(int argc, char** argv) {
+    //Initiating and opening the window with SDL
     SDL_Init(SDL_INIT_VIDEO);
 
-    Window GameWindow;
-    AddTaskButtonUI GameUI;
+    Window window;
+    ButtonUI AppUI;
 
     SDL_Event Event;
     bool shouldQuit{ false };
 
     while (!shouldQuit) {
         while (SDL_PollEvent(&Event)) {
-            GameUI.HandleEvent(Event);
+            AppUI.HandleEvent(Event);
             if (Event.type == SDL_QUIT) {
                 shouldQuit = true;
             }
         }
-        GameWindow.Render();
-        GameUI.Render(GameWindow.GetSurface());
-        GameWindow.Update();
+        window.Render();
+        AppUI.Render(window.GetSurface());
+        window.Update();
     }
 
     SDL_Quit();
-    //Initiating and opening the window with SDL
     //Adding, reading, editing tasks introduced     
     //for (std::string Answer_ph; Answer_ph != "end";) {
     //    std::cout << "Would you like to add, read, complete or delete a task?\n";

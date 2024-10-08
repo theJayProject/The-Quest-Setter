@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <SDL.h>
-#include "Buttons.h"
 
 //Creating a window on which the application will take place
 #define INITIALISE_WINDOW
@@ -40,4 +39,4 @@ private:
     SDL_Window* SDLWindow;
 };
 
-    AddTaskButtonUI AppUI;
+  ButtonUI AppUI;

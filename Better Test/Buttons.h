@@ -5,10 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #define ADD_TASK_BUTTON
 //Creating the surface for the add task button
-class AddTaskButton_rect {
+class Button_rect {
 public:
 public:
-    AddTaskButton_rect(
+    Button_rect(
         int x, int y, int w, int h,
         SDL_Color Color = { 0, 0, 0, 255 })
         : Rect{ x, y, w, h }, Color{ Color } {}
@@ -38,9 +38,9 @@ private:
 };
 
 //Add Task Button - mouse motion
-class AddTaskButton : public AddTaskButton_rect{
+class Button : public Button_rect{
 public:
-    AddTaskButton(int x, int y, int w, int h) : AddTaskButton_rect 
+    Button(int x, int y, int w, int h) : Button_rect 
     { x, y, w, h, {0, 255, 0} } {}
 
     void HandleEvent(const SDL_Event& Event) {
@@ -82,7 +82,7 @@ private:
 
         
         //Creating UI for the button
-class AddTaskButtonUI {
+class ButtonUI {
 public:
     void Render(SDL_Surface* Surface) {
         MyButton.Render(Surface);
@@ -93,13 +93,13 @@ public:
     }
 
     // x = 50, y = 50, w = 50, h = 50
-    AddTaskButton MyButton{ 50, 50, 50, 50 };
+    Button MyButton{ 50, 50, 50, 50 };
 };
 
-class DerivedAddTaskButton : public AddTaskButton {
+class DerivedButton : public Button {
 public:
-    DerivedAddTaskButton(int x, int y, int w, int h)
-        : AddTaskButton{ x, y, w, h } {}
+    DerivedButton(int x, int y, int w, int h)
+        : Button{ x, y, w, h } {}
 
 protected:
     void HandleLeftClick() override {
