@@ -38,5 +38,3 @@ public:
 private:
     SDL_Window* SDLWindow;
 };
-
-  ButtonUI AppUI;
