@@ -136,6 +136,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Buttons.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="visual.h" />
   </ItemGroup>

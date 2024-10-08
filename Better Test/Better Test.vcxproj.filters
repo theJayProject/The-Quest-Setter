@@ -26,5 +26,8 @@
     <ClInclude Include="visual.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Buttons.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

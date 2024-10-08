@@ -1,10 +1,30 @@
-#include "main.h"
+//#include "main.h"
 #include "visual.h"
-
+#include "Buttons.h" 
 
 
 int main(int argc, char** argv) {
-    init_SDL_window();
+    SDL_Init(SDL_INIT_VIDEO);
+
+    Window GameWindow;
+    AddTaskButtonUI GameUI;
+
+    SDL_Event Event;
+    bool shouldQuit{ false };
+
+    while (!shouldQuit) {
+        while (SDL_PollEvent(&Event)) {
+            GameUI.HandleEvent(Event);
+            if (Event.type == SDL_QUIT) {
+                shouldQuit = true;
+            }
+        }
+        GameWindow.Render();
+        GameUI.Render(GameWindow.GetSurface());
+        GameWindow.Update();
+    }
+
+    SDL_Quit();
     //Initiating and opening the window with SDL
     //Adding, reading, editing tasks introduced     
     //for (std::string Answer_ph; Answer_ph != "end";) {
@@ -26,6 +46,7 @@ int main(int argc, char** argv) {
     //        std::cout << "Error: command misunderstood.\n";
     //    }
     //}
-        return 0;
+
+    return 0;
 }
 
