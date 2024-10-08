@@ -41,7 +41,7 @@ private:
 class Button : public Button_rect{
 public:
     Button(int x, int y, int w, int h) : Button_rect 
-    { x, y, w, h, {0, 255, 0} } {}
+    { x, y, w, h, {255, 100, 100} } {}
 
     void HandleEvent(const SDL_Event& Event) {
         if (Event.type == SDL_MOUSEMOTION) {
@@ -62,7 +62,7 @@ private:
             SetColor({ 255, 0, 0 });
         }
         else {
-            SetColor({ 0, 255, 0 });
+            SetColor({ 255, 100, 100 });
         }
     }
     void HandleMouseButton(

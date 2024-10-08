@@ -43,7 +43,7 @@ private:
 class VisualTasks_button : public VisualTasks_rect {
 public:
     VisualTasks_button(int x, int y, int w, int h) : VisualTasks_rect
-    { x, y, w, h, {0, 0, 0} } {}
+    { x, y, w, h, {50, 30, 100} } {}
 
     void HandleEvent(const SDL_Event& Event) {
         if (Event.type == SDL_MOUSEMOTION) {
@@ -61,11 +61,13 @@ protected:
 private:
     void HandleMouseMotion(
         const SDL_MouseMotionEvent& Event) {
+        //On Hover
         if (IsWithinBounds(Event.x, Event.y)) {
-            SetColor({ 100, 50, 100 });
+            SetColor({ 50, 50, 100 });
         }
+        //Off Hover
         else {
-            SetColor({ 100, 30, 100 });
+            SetColor({ 50, 30, 100 });
         }
     }
     void HandleMouseButton(
@@ -79,6 +81,7 @@ private:
     }
 };
     //Creating UI for the button
+//EDIT THIS CLASS TO CHANGE SIZE
 class VisualTasks_buttonUI {
 public:
     void Render(SDL_Surface* Surface) {
@@ -88,9 +91,13 @@ public:
     void HandleEvent(const SDL_Event& E) {
         MyButton.HandleEvent(E);
     }
+    int x = 150;
     int y = 150;
+    int w = 400;
+    int h = 50;
+    // Standard Size:
     // x = 150, y = 150, w = 400, h = 50
-    VisualTasks_button MyButton{ 150, y, 400, 50 };
+    VisualTasks_button MyButton{ x, y, w, h };
 };
 
 class DerivedVisualTasks_button : public VisualTasks_button {
