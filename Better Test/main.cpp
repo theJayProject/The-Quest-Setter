@@ -1,7 +1,5 @@
-//#include "main.h"
-#include "visual.h"
-#include "Buttons.h" 
-
+#include "main.h"
+#include "VisualTasks.h"
 
 int main(int argc, char** argv) {
     //Initiating and opening the window with SDL
@@ -9,7 +7,7 @@ int main(int argc, char** argv) {
 
     Window window;
     ButtonUI AppUI;
-
+    VisualTasks_buttonUI VisualTask;
     SDL_Event Event;
     bool shouldQuit{ false };
 
@@ -22,6 +20,7 @@ int main(int argc, char** argv) {
         }
         window.Render();
         AppUI.Render(window.GetSurface());
+        VisualTask.Render(window.GetSurface());
         window.Update();
     }
 

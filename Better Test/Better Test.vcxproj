@@ -139,6 +139,7 @@
     <ClInclude Include="Buttons.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="visual.h" />
+    <ClInclude Include="VisualTasks.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
