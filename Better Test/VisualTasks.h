@@ -57,7 +57,6 @@ public:
 
 protected:
     virtual void HandleLeftClick() {}
-
 private:
     void HandleMouseMotion(
         const SDL_MouseMotionEvent& Event) {
