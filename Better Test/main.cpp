@@ -10,9 +10,12 @@ int main(int argc, char** argv) {
     VisualTasks_buttonUI VisualTask;
     SDL_Event Event;
     bool shouldQuit{ false };
-
+    
     while (!shouldQuit) {
+        //VisualTask.y change based on task amount
         while (SDL_PollEvent(&Event)) {
+            
+            VisualTask.HandleEvent(Event);
             AppUI.HandleEvent(Event);
             if (Event.type == SDL_QUIT) {
                 shouldQuit = true;

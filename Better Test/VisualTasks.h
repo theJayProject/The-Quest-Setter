@@ -1,13 +1,17 @@
 #pragma once
 #include <SDL.h>
+#include "Buttons.h"
 #define VISUAL_TASKS
+
+
+
 
 class VisualTasks_rect {
 public:
 public:
     VisualTasks_rect(
         int x, int y, int w, int h,
-        SDL_Color Color = { 50, 50, 50, 50 })
+        SDL_Color Color = { 0, 0, 0 })
         : Rect{ x, y, w, h }, Color{ Color } {}
 
     virtual void Render(SDL_Surface* Surface) {
@@ -32,14 +36,14 @@ public:
 
 private:
     SDL_Rect Rect{ 0, 0, 0, 0 };
-    SDL_Color Color{ 50, 50, 50, 50 };
+    SDL_Color Color{ 0, 0, 0 };
 };
 
 //Add Task Button - mouse motion
 class VisualTasks_button : public VisualTasks_rect {
 public:
     VisualTasks_button(int x, int y, int w, int h) : VisualTasks_rect
-    { x, y, w, h, {0, 255, 0} } {}
+    { x, y, w, h, {0, 0, 0} } {}
 
     void HandleEvent(const SDL_Event& Event) {
         if (Event.type == SDL_MOUSEMOTION) {
@@ -50,27 +54,29 @@ public:
         }
     }
 
+
 protected:
     virtual void HandleLeftClick() {}
-    virtual void HandleRightClick() {}
 
 private:
     void HandleMouseMotion(
         const SDL_MouseMotionEvent& Event) {
         if (IsWithinBounds(Event.x, Event.y)) {
-            SetColor({ 255, 0, 255 });
+            SetColor({ 100, 50, 100 });
         }
         else {
-            SetColor({ 0, 255, 255 });
+            SetColor({ 100, 30, 100 });
         }
     }
     void HandleMouseButton(
         const SDL_MouseButtonEvent& Event) {
         if (IsWithinBounds(Event.x, Event.y)) {
             const Uint8 Button{ Event.button };
+            if (Button == SDL_BUTTON_LEFT) {
+                HandleLeftClick();
+            }
         }
     }
-     
 };
     //Creating UI for the button
 class VisualTasks_buttonUI {
@@ -83,12 +89,17 @@ public:
         MyButton.HandleEvent(E);
     }
     int y = 150;
-    // x = 100, y = 100, w = 50, h = 50
+    // x = 150, y = 150, w = 400, h = 50
     VisualTasks_button MyButton{ 150, y, 400, 50 };
 };
 
-class DerivedVisualTasks_Button : public VisualTasks_button {
+class DerivedVisualTasks_button : public VisualTasks_button {
 public:
-    DerivedVisualTasks_Button(int x, int y, int w, int h)
+    DerivedVisualTasks_button(int x, int y, int w, int h)
         : VisualTasks_button{ x, y, w, h } {}
+
+protected:
+    void HandleLeftClick() override {
+        std::cout << "I have been left-clicked\n";
+    }
 };

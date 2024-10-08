@@ -54,7 +54,6 @@ public:
 
 protected:
     virtual void HandleLeftClick() {}
-    virtual void HandleRightClick() {}
 
 private:
     void HandleMouseMotion(
@@ -72,9 +71,6 @@ private:
             const Uint8 Button{ Event.button };
             if (Button == SDL_BUTTON_LEFT) {
                 HandleLeftClick();
-            }
-            else if (Button == SDL_BUTTON_RIGHT) {
-                HandleRightClick();
             }
         }
     }
@@ -105,10 +101,6 @@ protected:
     void HandleLeftClick() override {
         std::cout << "I have been left-clicked\n";
     }
-
-    void HandleRightClick() override {
-        std::cout << "I have been right-clicked\n";
-    }
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -116,14 +108,4 @@ protected:
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //ADD TASK BUTTON
-/*class AddTaskButton : public Button {
-public:
-    AddTaskButton(int x, int y, int w, int h)
-        : Button{ x, y, w, h } {}
-
- protected:
-     void HandleLeftClick() override {
-         SDL_Event AddTask{ //////////////// };
-         SDL_PushEvent(&AddTask);
-     }
-};*/
+/**/
