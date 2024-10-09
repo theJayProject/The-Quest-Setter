@@ -70,7 +70,9 @@ private:
         if (IsWithinBounds(Event.x, Event.y)) {
             const Uint8 Button{ Event.button };
             if (Button == SDL_BUTTON_LEFT) {
+             //BUTTON EVENT
                 HandleLeftClick();
+                std::cout << "I have been left-clicked\n";
             }
         }
     }
@@ -99,7 +101,6 @@ public:
 
 protected:
     void HandleLeftClick() override {
-        std::cout << "I have been left-clicked\n";
     }
 };
 
