@@ -8,3 +8,6 @@ Quest Setter now creates a window and a button reacts on hover. The expected fut
 
 09.10.2024
 Added SDL_TTF library and the Add Task Button is now temporarily functional.
+
+10.10.2024
+Learnt about loading commits using git, the terminal in Visual Studio and successfully reading the file location. No new features added to the project.
