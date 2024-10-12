@@ -1,5 +1,6 @@
-    #include "main.h"
+#include "main.h"
 #include "VisualTasks.h"
+#include "TaskInput.h"
 
 int main(int argc, char** argv) {
     //Initiating and opening the window with SDL
@@ -27,6 +28,9 @@ int main(int argc, char** argv) {
         window.Update();
     }
 
+    if (TTF_Init() < 0) {
+        std::cout << "Error initializing SDL_ttf: " << TTF_GetError() << std::endl;
+    }
     SDL_Quit();
     //Adding, reading, editing tasks introduced     
     //for (std::string Answer_ph; Answer_ph != "end";) {

@@ -32,5 +32,8 @@
     <ClInclude Include="VisualTasks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TaskInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

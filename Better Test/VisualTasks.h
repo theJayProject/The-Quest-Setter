@@ -8,7 +8,6 @@
 
 class VisualTasks_rect {
 public:
-public:
     VisualTasks_rect(
         int x, int y, int w, int h,
         SDL_Color Color = { 0, 0, 0 })
