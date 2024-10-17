@@ -15,5 +15,8 @@ Learnt about loading commits using git, the terminal in Visual Studio and succes
 12.10.2024 
 Introduced a temporary class which will render text input.
 
-17.10.2024 
+16.10.2024 
 Did research on SDL_TTF and its implementation alongside creating a plan on how to implement the text input into the program.
+
+17.10.2024
+Added the VisualTask class a function (Console-based for the time being) 
