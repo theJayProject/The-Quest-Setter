@@ -6,7 +6,7 @@ int main(int argc, char** argv) {
     SDL_Init(SDL_INIT_VIDEO);
 
     Window window;
-    ButtonUI AppUI;
+    ButtonUI AddTask_Button;
     VisualTasks_buttonUI VisualTask;
     SDL_Event Event;
     bool shouldQuit{ false };
@@ -15,13 +15,13 @@ int main(int argc, char** argv) {
         //VisualTask.y change based on task amount
         while (SDL_PollEvent(&Event)) {
             VisualTask.HandleEvent(Event);
-            AppUI.HandleEvent(Event);
+            AddTask_Button.HandleEvent(Event);
             if (Event.type == SDL_QUIT) {
                 shouldQuit = true;
             }
         }
         window.Render();
-        AppUI.Render(window.GetSurface());
+        AddTask_Button.Render(window.GetSurface());
         VisualTask.Render(window.GetSurface());
         window.Update();
     }
