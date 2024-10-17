@@ -65,6 +65,7 @@ private:
             SetColor({ 255, 100, 100 });
         }
     }
+
     void HandleMouseButton(
         const SDL_MouseButtonEvent& Event) {
         if (IsWithinBounds(Event.x, Event.y)) {
@@ -73,12 +74,13 @@ private:
              //BUTTON EVENT
                 HandleLeftClick();
                 std::cout << "I have been left-clicked\n";
+                    
             }
         }
     }
 };
 
-        
+
         //Creating UI for the button
 class ButtonUI {
 public:

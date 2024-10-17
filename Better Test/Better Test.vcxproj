@@ -138,7 +138,6 @@
   <ItemGroup>
     <ClInclude Include="Buttons.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="TaskInput.h" />
     <ClInclude Include="visual.h" />
     <ClInclude Include="VisualTasks.h" />
   </ItemGroup>

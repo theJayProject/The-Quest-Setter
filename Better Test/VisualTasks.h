@@ -59,6 +59,8 @@ protected:
 private:
     void HandleMouseMotion(
         const SDL_MouseMotionEvent& Event) {
+
+
         //On Hover
         if (IsWithinBounds(Event.x, Event.y)) {
             SetColor({ 50, 50, 100 });
@@ -67,6 +69,7 @@ private:
         else {
             SetColor({ 50, 30, 100 });
         }
+
     }
     void HandleMouseButton(
         const SDL_MouseButtonEvent& Event) {
@@ -74,6 +77,8 @@ private:
             const Uint8 Button{ Event.button };
             if (Button == SDL_BUTTON_LEFT) {
                 HandleLeftClick();
+                //INPUT PERMAMENT COLOUR CHANGE FOR VISUAL TASK ON CLICK HERE
+                std::cout << "VisualTasks has been left-clicked\n";
             }
         }
     }

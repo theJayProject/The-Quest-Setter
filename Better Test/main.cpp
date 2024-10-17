@@ -1,6 +1,5 @@
 #include "main.h"
 #include "VisualTasks.h"
-#include "TaskInput.h"
 
 int main(int argc, char** argv) {
     //Initiating and opening the window with SDL
@@ -15,7 +14,6 @@ int main(int argc, char** argv) {
     while (!shouldQuit) {
         //VisualTask.y change based on task amount
         while (SDL_PollEvent(&Event)) {
-            
             VisualTask.HandleEvent(Event);
             AppUI.HandleEvent(Event);
             if (Event.type == SDL_QUIT) {
@@ -26,10 +24,6 @@ int main(int argc, char** argv) {
         AppUI.Render(window.GetSurface());
         VisualTask.Render(window.GetSurface());
         window.Update();
-    }
-
-    if (TTF_Init() < 0) {
-        std::cout << "Error initializing SDL_ttf: " << TTF_GetError() << std::endl;
     }
     SDL_Quit();
     //Adding, reading, editing tasks introduced     
